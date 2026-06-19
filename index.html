@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Claude Learning Journey</title>
+    <script>
+      (function() {
+        var stored = localStorage.getItem('theme');
+        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,6 +23,14 @@
                 <li><a href="#resources">Resources</a></li>
                 <li><a href="#progress">Progress</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Toggle dark mode">
+                <span class="theme-toggle-track">
+                    <span class="theme-toggle-thumb">
+                        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                        <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    </span>
+                </span>
+            </button>
         </nav>
     </header>
 
@@ -99,5 +114,7 @@
     <footer>
         <p>Built with Claude Code &mdash; My AI Learning Journey 2026</p>
     </footer>
+
+    <script src="theme.js" defer></script>
 </body>
 </html>
