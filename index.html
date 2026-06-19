@@ -6,8 +6,11 @@
     <title>My Claude Learning Journey</title>
     <script>
       (function() {
-        var stored = localStorage.getItem('theme');
-        var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var theme = 'light';
+        try {
+          var stored = localStorage.getItem('theme');
+          theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (e) {}
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>

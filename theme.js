@@ -9,7 +9,9 @@
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    localStorage.setItem(STORAGE_KEY, theme);
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch (e) {}
     if (toggle) {
       toggle.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
     }
@@ -22,4 +24,13 @@
       applyTheme(next);
     });
   }
+
+  window.addEventListener('storage', function(e) {
+    if (e.key === STORAGE_KEY && e.newValue) {
+      root.setAttribute('data-theme', e.newValue);
+      if (toggle) {
+        toggle.setAttribute('aria-checked', e.newValue === 'dark' ? 'true' : 'false');
+      }
+    }
+  });
 })();

@@ -9,7 +9,6 @@
     --color-text-secondary: #555;
     --color-text-tertiary: #666;
     --color-text-muted: #999;
-    --color-text-status: #888;
 
     --color-bg: #fff;
     --color-bg-alt: #fafafa;
@@ -23,6 +22,8 @@
     --hero-gradient-1: #fdf6ec;
     --hero-gradient-2: #fff8f0;
     --hero-gradient-3: #f0e6ff;
+
+    --resource-hover-bg: #fdf6ec;
 
     --status-done-bg: #e6f9ee;
     --status-done-text: #1a8a4a;
@@ -42,7 +43,6 @@
     --color-text-secondary: #c2c2cc;
     --color-text-tertiary: #b0b0bb;
     --color-text-muted: #8a8a96;
-    --color-text-status: #a8a8b3;
 
     --color-bg: #15152b;
     --color-bg-alt: #1c1c38;
@@ -56,6 +56,8 @@
     --hero-gradient-1: #1c1830;
     --hero-gradient-2: #221c2e;
     --hero-gradient-3: #20203f;
+
+    --resource-hover-bg: #2a2444;
 
     --status-done-bg: #163f29;
     --status-done-text: #4ade80;
@@ -307,7 +309,7 @@ nav a:hover {
 }
 
 .resource-list a:hover {
-    background: var(--hero-gradient-1);
+    background: var(--resource-hover-bg);
     border-color: var(--color-accent);
 }
 
